@@ -56,7 +56,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="PROJECT"
+config/name="PROJEXT-3D"
 run/main_scene="res://ASSETS/SCENES/MAIN MENU/MAINMENU.tscn"
 config/icon="res://icon.png"
 
