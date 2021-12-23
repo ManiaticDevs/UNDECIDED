@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ASSETS/SCENES/MAIN/MAIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/PLAYER/PLAYER.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ASSETS/MODELS/cicero/Atlas_81863.png" type="Texture" id=3]
 [ext_resource path="res://untitled.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://ASSETS/SOUNDS/bhop.mp3" type="AudioStream" id=5]
+[ext_resource path="res://ASSETS/MODELS/cicero/CICERO.gd" type="Script" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -53,6 +54,10 @@ detail_blend_mode = 0
 detail_uv_layer = 0
 detail_albedo = ExtResource( 3 )
 
+[sub_resource type="CylinderShape" id=6]
+radius = 40.9531
+height = 98.9017
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -66,11 +71,19 @@ material/0 = null
 [node name="collision_shape" type="CollisionShape" parent="platform/static_body"]
 shape = SubResource( 2 )
 
-[node name="3dCC" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00308013, -24.8626, -0.00454068 )
 
-[node name="untitled" type="MeshInstance" parent="."]
-transform = Transform( -2.18557e-09, 0, -0.05, 0, 0.05, 0, 0.05, 0, -2.18557e-09, 76.6848, -20.436, 1.37029 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 4.55
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( -1.5299e-09, 0, -0.035, 0, 0.035, 0, 0.035, 0, -1.5299e-09, 68.2259, -24.5271, -0.0772536 )
+script = ExtResource( 6 )
+
+[node name="untitled" type="MeshInstance" parent="Area"]
+transform = Transform( 1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, 0, 0 )
 layers = 1048575
 material_override = SubResource( 3 )
 lod_max_distance = 32768.0
@@ -80,6 +93,9 @@ software_skinning_transform_normals = false
 material/0 = SubResource( 4 )
 material/1 = SubResource( 5 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="untitled"]
-stream = ExtResource( 5 )
-volume_db = 4.55
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 42.322, 0 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Area" to="Area" method="_on_CICERO_body_entered"]
+[connection signal="body_exited" from="Area" to="Area" method="_on_CICERO_body_exited"]
