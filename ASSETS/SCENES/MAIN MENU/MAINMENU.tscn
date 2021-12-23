@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ASSETS/SCENES/MAIN MENU/MAINMENU.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/SOUNDS/definedancing.mp3" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/THEMES/mainmenu.tres" type="Theme" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.5
+margin_top = -24.0
+margin_right = 31.5
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NEWGAME" type="Button" parent="VBoxContainer"]
+show_behind_parent = true
+margin_right = 63.0
+margin_bottom = 21.0
+focus_neighbour_top = NodePath("../QUIT")
+theme = ExtResource( 4 )
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="VBoxContainer"]
+margin_top = 25.0
+margin_right = 63.0
+margin_bottom = 46.0
+focus_neighbour_bottom = NodePath("../NEWGAME")
+theme = ExtResource( 4 )
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[connection signal="pressed" from="VBoxContainer/NEWGAME" to="." method="_on_NEW_GAME_pressed"]
+[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_QUIT_pressed"]

@@ -2,16 +2,16 @@ extends KinematicBody
 
 enum State {IDLE, RUN, JUMP, FALL}
 
-const JUMP_SPEED = 12
+const JUMP_SPEED = 14
 const JUMP_FRAMES = 1
-const HOP_FRAMES = 3
+const HOP_FRAMES = 1
 
-export var mouse_y_sens = .1
-export var mouse_x_sens = .1
+export var mouse_y_sens = .2
+export var mouse_x_sens = .2
 export var move_speed = 10
-export var acceleration = .5
-export var gravity = -8
-export var friction = 1.1333
+export var acceleration = .6
+export var gravity = -10
+export var friction = 1.15
 export var max_climb_angle = .6
 export var angle_of_freedom = 80
 export var boost_accumulation_speed = 1
@@ -59,8 +59,7 @@ func _process_input(delta):
 				
 	#Sprint
 	if Input.is_action_just_pressed("sprint"):
-		move_speed += 5
-	
+			move_speed += 5
 	if Input.is_action_just_released("sprint"):
 		move_speed = 10
 	
@@ -74,6 +73,7 @@ func _process_input(delta):
 		if on_floor:
 			crouch_floor = true
 		crouching = true
+		move_speed = 5
 		$Tween.interpolate_property($LowerCollider, "translation", 
 				Vector3(0, -.25, 0), Vector3(0,.25, 0), .1, Tween.TRANS_LINEAR)
 		$Tween.start()
