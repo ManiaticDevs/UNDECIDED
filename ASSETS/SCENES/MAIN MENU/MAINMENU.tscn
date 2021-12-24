@@ -17,26 +17,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -31.5
-margin_top = -24.0
-margin_right = 31.5
-margin_bottom = 24.0
+margin_left = -62.0
+margin_top = -49.0
+margin_right = 62.0
+margin_bottom = 49.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NEWGAME" type="Button" parent="VBoxContainer"]
 show_behind_parent = true
-margin_right = 63.0
-margin_bottom = 21.0
+margin_right = 124.0
+margin_bottom = 47.0
 focus_neighbour_top = NodePath("../QUIT")
 theme = ExtResource( 4 )
 text = "PLAY"
 
 [node name="QUIT" type="Button" parent="VBoxContainer"]
-margin_top = 25.0
-margin_right = 63.0
-margin_bottom = 46.0
+margin_top = 51.0
+margin_right = 124.0
+margin_bottom = 98.0
 focus_neighbour_bottom = NodePath("../NEWGAME")
 theme = ExtResource( 4 )
 text = "QUIT"

@@ -6,8 +6,8 @@ func _ready():
 	connect("body_entered", self, '_on_CICERO_body_entered')
 	connect("body_exited", self, '_on_CICERO_body_exited')
 
-#func _process(delta):
-#	$speechnpc.visible = active
+func _process(delta):
+	$Control/Label/AnimationPlayer.stop
 
 func _input(event):
 	if get_node_or_null('DialogNode') == null:
@@ -23,8 +23,8 @@ func unpause(timeline_end):
 
 func _on_CICERO_body_entered(body):
 		if body.name == 'Player':
-			active = true
+			$Control/Label/AnimationPlayer.play("FADE")
 
 func _on_CICERO_body_exited(body):
 	if body.name == 'Player':
-		active = false
+		$Control/Label/AnimationPlayer.stop

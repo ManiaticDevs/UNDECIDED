@@ -9,7 +9,7 @@ const HOP_FRAMES = 4
 export var mouse_y_sens = .2
 export var mouse_x_sens = .2
 export var move_speed = 10
-export var acceleration = .5
+export var acceleration = .6
 export var gravity = -10
 export var friction = 1.16
 export var max_climb_angle = .6
@@ -59,7 +59,7 @@ func _process_input(delta):
 				
 	#Sprint
 	if Input.is_action_just_pressed("sprint"):
-			move_speed += 5
+			move_speed += 5.5
 	if Input.is_action_just_released("sprint"):
 		move_speed = 10
 	
