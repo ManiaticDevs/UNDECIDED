@@ -7,7 +7,7 @@ func _ready():
 	connect("body_exited", self, '_on_CICERO_body_exited')
 
 func _process(delta):
-	$Control/Label/AnimationPlayer.stop
+	$Control/Label.visible = active
 
 func _input(event):
 	if get_node_or_null('DialogNode') == null:
@@ -22,9 +22,9 @@ func unpause(timeline_end):
 	get_tree().paused = false
 
 func _on_CICERO_body_entered(body):
-		if body.name == 'Player':
-			$Control/Label/AnimationPlayer.play("FADE")
+		if body.name == 'PLAYER':
+			active = true
 
 func _on_CICERO_body_exited(body):
-	if body.name == 'Player':
-		$Control/Label/AnimationPlayer.stop
+	if body.name == 'PLAYER':
+		active = false

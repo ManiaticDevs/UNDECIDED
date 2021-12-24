@@ -78,7 +78,7 @@ material/0 = null
 [node name="collision_shape" type="CollisionShape" parent="platform/static_body"]
 shape = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="PLAYER" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00308013, -24.8626, -0.00454068 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -117,7 +117,6 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Area/Control"]
-modulate = Color( 1, 1, 1, 0.538659 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

@@ -7,11 +7,10 @@
 radius = 0.5
 height = 0.5
 
-[node name="3dCC" type="KinematicBody"]
+[node name="PLAYER" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1.2817, 0, 0, 0, 1, 0, 0.0226282, 0 )
 collision_layer = 1048575
 script = ExtResource( 1 )
-move_speed = 8
 acceleration = 1.1
 
 [node name="UpperCollider" type="CollisionShape" parent="."]

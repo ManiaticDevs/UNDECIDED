@@ -24,6 +24,7 @@ func _process(delta):
 
 func _on_NEW_GAME_pressed():
 	get_tree().change_scene("res://ASSETS/SCENES/MAIN/MAIN.tscn")
+	print("changed bitch")
 
 func _on_QUIT_pressed():
 	get_tree().quit()
