@@ -7,7 +7,7 @@ func _ready():
 	connect("body_exited", self, '_on_CICERO_body_exited')
 
 func _process(delta):
-	$Control/Label.visible = active
+	$untitled/E.visible = active
 
 func _input(event):
 	if get_node_or_null('DialogNode') == null:

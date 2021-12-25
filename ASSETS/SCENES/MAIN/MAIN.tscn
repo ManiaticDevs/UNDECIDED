@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/SCENES/MAIN/MAIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/PLAYER/PLAYER.tscn" type="PackedScene" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://ASSETS/MODELS/cicero/untitled.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://ASSETS/SOUNDS/bhop.mp3" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/MODELS/cicero/CICERO.gd" type="Script" id=6]
-[ext_resource path="res://ASSETS/THEMES/Etointeract.tres" type="Theme" id=7]
+[ext_resource path="res://ASSETS/MODELS/projext-plat/joE.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://ASSETS/IMAGES/E.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/MODELS/projext-plat/HAHA.tres" type="Skin" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -46,24 +48,19 @@ distance_fade_max_distance = 0.0
 radius = 105.825
 height = 98.9017
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="SpatialMaterial" id=5]
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 3.51
+emission_operator = 0
+emission_on_uv2 = false
 
-[sub_resource type="Animation" id=6]
-resource_name = "FADE"
-length = 1.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
-}
+[sub_resource type="SpatialMaterial" id=6]
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 3.82
+emission_operator = 0
+emission_on_uv2 = false
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -100,40 +97,22 @@ software_skinning_transform_normals = false
 material/0 = null
 material/1 = null
 
+[node name="E" type="Sprite" parent="Area/untitled"]
+position = Vector2( 640, 656 )
+texture = ExtResource( 8 )
+
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, -1.77636e-14, 0, 1, 0, 1.77636e-14, 0, 1, 0, 53.0626, 0 )
 shape = SubResource( 4 )
 
-[node name="Control" type="Control" parent="Area"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -40.0
-margin_right = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Area/Control"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -15.5
-margin_top = -72.0
-margin_right = 15.5
-margin_bottom = -25.0
-theme = ExtResource( 7 )
-custom_styles/normal = SubResource( 5 )
-text = "E"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area/Control/Label"]
-anims/FADE = SubResource( 6 )
+[node name="joE" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2579, -24.527, 13.1779 )
+mesh = ExtResource( 7 )
+skin = ExtResource( 9 )
+material/0 = SubResource( 5 )
+material/1 = null
+material/2 = null
+material/3 = SubResource( 6 )
 
 [connection signal="body_entered" from="Area" to="Area" method="_on_CICERO_body_entered"]
 [connection signal="body_exited" from="Area" to="Area" method="_on_CICERO_body_exited"]
