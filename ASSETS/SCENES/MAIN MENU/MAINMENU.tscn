@@ -24,34 +24,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -262.0
-margin_top = -140.0
-margin_right = 262.0
-margin_bottom = 140.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
 
-[node name="PLAY" type="TextureButton" parent="VBoxContainer"]
-margin_right = 524.0
-margin_bottom = 140.0
-theme = SubResource( 1 )
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="QUIT" type="TextureButton" parent="VBoxContainer"]
-margin_top = 144.0
-margin_right = 524.0
-margin_bottom = 280.0
+[node name="QUIT" type="TextureButton" parent="."]
+margin_left = 378.0
+margin_top = 292.0
+margin_right = 902.0
+margin_bottom = 428.0
 theme = SubResource( 1 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
@@ -60,14 +41,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -15.0
+[node name="PLAY" type="TextureButton" parent="."]
+margin_left = 415.0
+margin_top = 290.0
+margin_right = 865.0
+margin_bottom = 430.0
+theme = SubResource( 1 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="title" type="Sprite" parent="."]
-position = Vector2( 590.943, 169.854 )
+position = Vector2( 655.562, 250.311 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
-[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_PLAY_pressed"]
-[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_QUIT_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_QUIT_pressed"]
+[connection signal="pressed" from="PLAY" to="." method="_on_PLAY_pressed"]
