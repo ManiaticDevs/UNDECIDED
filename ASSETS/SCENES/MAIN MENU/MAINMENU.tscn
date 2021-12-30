@@ -30,9 +30,9 @@ volume_db = -15.0
 
 [node name="QUIT" type="TextureButton" parent="."]
 margin_left = 378.0
-margin_top = 292.0
+margin_top = 433.0
 margin_right = 902.0
-margin_bottom = 428.0
+margin_bottom = 569.0
 theme = SubResource( 1 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 7 )
