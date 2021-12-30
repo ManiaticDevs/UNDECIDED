@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$VBoxContainer/NEWGAME.grab_focus()
+	$VBoxContainer/PLAY.grab_focus()
 	$AudioStreamPlayer.play()
 
 func _process(delta):
@@ -22,9 +22,11 @@ func _process(delta):
 
 
 
-func _on_NEW_GAME_pressed():
-	get_tree().change_scene("res://ASSETS/SCENES/MAIN/MAIN.tscn")
-	print("changed bitch")
 
 func _on_QUIT_pressed():
 	get_tree().quit()
+
+
+func _on_PLAY_pressed():
+	get_tree().change_scene("res://ASSETS/SCENES/MAIN/MAIN.tscn")
+	print("changed bitch")
