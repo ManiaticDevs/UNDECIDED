@@ -2,20 +2,20 @@ extends KinematicBody
 
 enum State {IDLE, RUN, JUMP, FALL}
 
-const JUMP_SPEED = 14
+const JUMP_SPEED = 10
 const JUMP_FRAMES = 1
 const HOP_FRAMES = 4
 
-export var mouse_y_sens = .2
-export var mouse_x_sens = .2
-export var move_speed = 8.5
+export var mouse_y_sens = .2555
+export var mouse_x_sens = .2555
+export var move_speed = 7.5
 export var acceleration = .5
-export var gravity = -10
-export var friction = 1.16
+export var gravity = -8
+export var friction = 1.15
 export var max_climb_angle = .6
 export var angle_of_freedom = 80
 export var boost_accumulation_speed = 1
-export var max_boost_multiplier = 2
+export var max_boost_multiplier = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -81,10 +81,10 @@ func _process_input(delta):
 		inbetween = true
 	#Sprint
 	if Input.is_action_just_pressed("sprint"):
-			move_speed += 5.5
+			move_speed += 3.222
 
 	if Input.is_action_just_released("sprint"):
-		move_speed = 8.5
+		move_speed = 7.5
 	
 	# WASD
 	input_dir = Vector3(Input.get_action_strength("right") - Input.get_action_strength("left"), 

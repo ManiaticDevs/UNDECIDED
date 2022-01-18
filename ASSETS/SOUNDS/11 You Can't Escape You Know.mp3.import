@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/11 You Can't Escape You Know.mp3-2d9163b7e3b5db8e36c470b7f91cd3c6.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/SOUNDS/11 You Can't Escape You Know.mp3"
+dest_files=[ "res://.import/11 You Can't Escape You Know.mp3-2d9163b7e3b5db8e36c470b7f91cd3c6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

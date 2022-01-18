@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/08 Stop What You Are Doing.mp3-faf9ecb018a76fe992184804075495f7.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/SOUNDS/08 Stop What You Are Doing.mp3"
+dest_files=[ "res://.import/08 Stop What You Are Doing.mp3-faf9ecb018a76fe992184804075495f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

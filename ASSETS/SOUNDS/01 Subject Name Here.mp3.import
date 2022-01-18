@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/01 Subject Name Here.mp3-217072740d1b0a1e7ad9ef41c2c638a1.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/SOUNDS/01 Subject Name Here.mp3"
+dest_files=[ "res://.import/01 Subject Name Here.mp3-217072740d1b0a1e7ad9ef41c2c638a1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
