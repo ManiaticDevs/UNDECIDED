@@ -6,8 +6,8 @@ func _ready():
 	connect("body_entered", self, '_on_CICERO_body_entered')
 	connect("body_exited", self, '_on_CICERO_body_exited')
 
-func _process(delta):
-	$untitled/E.visible = active
+#func _process(delta):
+#	$"./E".visible = active
 
 func _input(event):
 	if get_node_or_null('DialogNode') == null:

@@ -10,7 +10,7 @@ export var mouse_y_sens = .2555
 export var mouse_x_sens = .2555
 export var move_speed = 7.5
 export var acceleration = .5
-export var gravity = -12
+export var gravity = -11.222
 export var friction = 1.15
 export var max_climb_angle = .6
 export var angle_of_freedom = 80
@@ -19,7 +19,6 @@ export var max_boost_multiplier = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.translation = get_parent().get_node("PLAYERSPAWN").translation 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
