@@ -2,23 +2,24 @@ extends KinematicBody
 
 enum State {IDLE, RUN, JUMP, FALL}
 
-const JUMP_SPEED = 10
-const JUMP_FRAMES = 1
+const JUMP_SPEED = 5
+const JUMP_FRAMES = 10
 const HOP_FRAMES = 4
 
 export var mouse_y_sens = .2555
 export var mouse_x_sens = .2555
 export var move_speed = 7.5
 export var acceleration = .5
-export var gravity = -8
+export var gravity = -12
 export var friction = 1.15
 export var max_climb_angle = .6
 export var angle_of_freedom = 80
-export var boost_accumulation_speed = 1
+export var boost_accumulation_speed = 2
 export var max_boost_multiplier = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.translation = get_parent().get_node("PLAYERSPAWN").translation 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
@@ -34,7 +35,6 @@ func _input(event):
 		var camera_rot = $UpperCollider/Camera.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, 90 + angle_of_freedom * -1, 90 + angle_of_freedom)
 		$UpperCollider/Camera.rotation_degrees = camera_rot
-
 
 var inbetween = false
 func _on_tween_all_completed():
@@ -188,3 +188,4 @@ func _process_movement(delta):
 			velocity = Vector3(velocity.x, velocity.y + ((Vector3(velocity.x, 0, velocity.z).dot(collision.normal)) * - 2) , velocity.z)
 		else:
 			velocity = velocity
+			

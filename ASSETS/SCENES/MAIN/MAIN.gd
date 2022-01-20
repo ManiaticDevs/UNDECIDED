@@ -7,6 +7,4 @@ func _process(delta):
 	
 	if $AudioStreamPlayer.playing == false:
 		$AudioStreamPlayer.play()
-
-
-
+#	preload("res://addons/eco.fps.walker/basic_bot.tscn")
