@@ -6,10 +6,11 @@
 
 ## DEVS :
 
-![Screenshot 2021-12-23 151308](https://user-images.githubusercontent.com/78755068/147380653-95fda30d-042b-4a64-b565-fc7c1b2fed57.png)
+![Capybara](https://user-images.githubusercontent.com/65462136/173542828-60647788-d8e0-4ef6-85e1-6abe49538c70.png)
 
 Oikmo (Oikmo#9889)
 
 LYCNK (LYCN K#4499)
 
 MasterOof (skekstisnk#2889)
+![Capybara](https://user-images.githubusercontent.com/65462136/173542828-60647788-d8e0-4ef6-85e1-6abe49538c70.png)
